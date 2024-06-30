@@ -58,7 +58,9 @@ export default function GlobalState({ children }) {
   async function fetchFavoritesList() {
     setLoading(true);
     try {
-      const response = await axios.get("http://127.0.0.1:3333/Favorites");
+      const response = await axios.get(
+        "https://food-recipe-server.vercel.app/Favorites"
+      );
       const favorites = response.data;
       setFavoritesList(favorites);
       console.log(favorites, "mongodb");
@@ -87,7 +89,7 @@ export default function GlobalState({ children }) {
           id,
         } = getCurrentItem;
         const response = await axios.post(
-          "http://127.0.0.1:3333/Favorites/create",
+          "https://food-recipe-server.vercel.app/Favorites/create",
           {
             publisher,
             source_url,
@@ -106,7 +108,9 @@ export default function GlobalState({ children }) {
     } else {
       try {
         const { id } = getCurrentItem;
-        await axios.delete(`http://127.0.0.1:3333/Favorites/delete/${id}`);
+        await axios.delete(
+          `https://food-recipe-server.vercel.app/Favorites/delete/${id}`
+        );
         copyFavoritesList.splice(index, 1);
       } catch (error) {
         console.log(error);
