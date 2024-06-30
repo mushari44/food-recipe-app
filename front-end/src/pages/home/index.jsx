@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className=" py-8 container mx-auto flex flex-wrap justify-center gap-10">
       {recipeLists && recipeLists.length > 0 ? (
-        recipeLists.map((item) => <RecipeItem item={item} />)
+        recipeLists.map((item,id) => <RecipeItem item={item} key={id} />)
       ) : (
         <p className="lg:text-4xl text-xl text-center text-black font-extrabold ">
           Nothing to show. Please search something
