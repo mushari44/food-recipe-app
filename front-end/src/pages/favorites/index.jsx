@@ -11,7 +11,7 @@ export default function Favorites() {
         favoritesList.map((item, id) => <RecipeItem key={id} item={item} />)
       ) : (
         <p className="lg:text-4xl text-xl text-center text-black font-extrabold ">
-          Nothing is added in favorites.
+          Nothing is added in favorites...
         </p>
       )}
     </div>
